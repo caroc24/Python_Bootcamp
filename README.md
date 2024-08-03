@@ -1,2 +1,2 @@
 # Python_Bootcamp
-Projects from my Python Bootcamp
+These files will be projects I complete as I work on Angela Yu's 100 Days of Python bootcamp.
