@@ -39,10 +39,13 @@ def report():
     money = resources["money"]
     return f"Water: {water}ml\nMilk: {milk}ml\nCoffee: {coffee}mg\nMoney: ${money}"
 
-machine_is_on: True
-while machine_is_on:
-    coffee_order = input("What would you like? (espresso/latte/cappuccino)")
-    if coffee_order == 'report':
-        print()
-    if coffee_order == 'off':
-        machine_is_on = False
+def coffee_machine():
+    machine_is_on: True
+    while machine_is_on:
+        coffee_order = input("What would you like? (espresso/latte/cappuccino)")
+        if coffee_order == 'report':
+            print()
+        if coffee_order == 'off':
+            machine_is_on = False
+
+coffee_machine()
