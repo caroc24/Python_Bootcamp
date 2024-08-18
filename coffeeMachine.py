@@ -43,21 +43,17 @@ def report():
 
 def check_resources(drink):
     """Returns true when order can be made, and false when it can't."""
-    req_water = MENU[drink]['ingredients']['water']
-    req_milk = MENU[drink]['ingredients']['milk']
-    req_coffee = water = MENU[drink]['ingredients']['coffee']
-
     water = resources["water"]
     milk = resources["milk"]
     coffee = resources["coffee"]
 
-    if water < req_water:
+    if water < drink['ingredients']['water']:
         print("Sorry there is not enough water.")
         return False
-    elif milk < req_milk:
+    elif milk < drink['ingredients']['milk']:
         print("Sorry there is not enough milk.")
         return False
-    elif coffee < req_coffee:
+    elif coffee < drink['ingredients']['coffee']:
         print("Sorry there is not enough coffee.")
         return False
     else:
@@ -101,6 +97,7 @@ def coffee_machine():
             coffee_order = MENU[coffee_order]
             if check_resources(coffee_order):
                 money_inserted = process_coins()
+                is_transaction_successful(money_inserted, coffee_order['cost'])
 
 
 coffee_machine()
