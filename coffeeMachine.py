@@ -49,7 +49,6 @@ def check_resources(drink):
     water = resources["water"]
     milk = resources["milk"]
     coffee = resources["coffee"]
-    money = resources["money"]
 
     if water < req_water:
         print("Sorry there is not enough water.")
@@ -79,7 +78,12 @@ def coffee_machine():
         coffee_order = input("What would you like? (espresso/latte/cappuccino) ")
         if coffee_order == 'espresso':
             if check_resources(coffee_order):
-                process_coins()
+                espresso_cost = MENU[coffee_order]['ingredients']['cost']
+                money_inserted = process_coins()
+                if money_inserted > espresso_cost:
+                    change = money_inserted - espresso_cost
+                    #resources["money"].append(1.50)
+                    #print( f"Here is {change} dollars in change.”)
         elif coffee_order == 'report':
             report()
         elif coffee_order == 'off':
