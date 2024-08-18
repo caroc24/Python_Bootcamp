@@ -2,6 +2,7 @@ MENU = {
     "espresso": {
         "ingredients": {
             "water": 50,
+            "milk" : 0,
             "coffee": 18,
         },
         "cost": 1.5,
@@ -77,7 +78,8 @@ def coffee_machine():
     while machine_is_on:
         coffee_order = input("What would you like? (espresso/latte/cappuccino) ")
         if coffee_order == 'espresso':
-            check_resources(coffee_order)
+            if check_resources(coffee_order):
+                process_coins()
         elif coffee_order == 'report':
             report()
         elif coffee_order == 'off':
