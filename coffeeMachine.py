@@ -52,16 +52,25 @@ def check_resources(drink):
 
     if water < req_water:
         print("Sorry there is not enough water.")
-    if milk < req_milk:
+    elif milk < req_milk:
         print("Sorry there is not enough milk.")
-    if coffee < req_coffee:
+    elif coffee < req_coffee:
         print("Sorry there is not enough coffee.")
 
+def process_coins():
+    print("Please insert coins.\n")
+    quarters = int(input("How many quarters?: "))
+    dimes = int(input("How many dimes?: "))
+    nickels = int(input("How many nickels?: "))
+    pennies = int(input("How many pennies?: "))
+
+    total_money = quarters * 0.25 + dimes * 0.1 + nickels * 0.05 + pennies * 0.01
+    return total_money
 
 def coffee_machine():
     machine_is_on = True
     while machine_is_on:
-        coffee_order = input("What would you like? (espresso/latte/cappuccino)")
+        coffee_order = input("What would you like? (espresso/latte/cappuccino) ")
         if coffee_order == 'espresso':
             check_resources(coffee_order)
         elif coffee_order == 'report':
