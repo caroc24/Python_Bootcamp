@@ -76,6 +76,15 @@ def process_coins():
     return total_money
 
 
+def is_transaction_successful(money_inserted, drink_cost):
+    """Returns true if payment is enough. Returns false if money is insufficient."""
+    if money_inserted >= drink_cost:
+        return True
+    else:
+        print("Sorry, that is not enough money.")
+        return False
+
+
 def coffee_machine():
     machine_is_on = True
     while machine_is_on:
@@ -85,14 +94,13 @@ def coffee_machine():
         elif coffee_order == 'report':
             report()
         else:
-            coffee_order == 'espresso'
+            coffee_order = MENU[coffee_order]
             if check_resources(coffee_order):
-                espresso_cost = MENU[coffee_order]['ingredients']['cost']
                 money_inserted = process_coins()
-                if money_inserted > espresso_cost:
-                    change = money_inserted - espresso_cost
-                    resources["money"].append(1.50)
-                    print(f"Here is {change} dollars in change.")
+            #     if money_inserted > espresso_cost:
+            #         change = money_inserted - espresso_cost
+            #         resources["money"].append(1.50)
+            #         print(f"Here is {change} dollars in change.")
 
 
 coffee_machine()
