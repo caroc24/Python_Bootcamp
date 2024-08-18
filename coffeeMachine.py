@@ -25,11 +25,11 @@ MENU = {
     }
 }
 
+profit = 0
 resources = {
     "water": 300,
     "milk": 200,
     "coffee": 100,
-    "money": 0,
 }
 
 
@@ -37,8 +37,8 @@ def report():
     water = resources["water"]
     milk = resources["milk"]
     coffee = resources["coffee"]
-    money = resources["money"]
-    print(f"Water: {water}ml\nMilk: {milk}ml\nCoffee: {coffee}mg\nMoney: ${money}")
+    global profit
+    print(f"Water: {water}ml\nMilk: {milk}ml\nCoffee: {coffee}mg\nMoney: ${profit}")
 
 
 def check_resources(drink):
@@ -76,12 +76,14 @@ def process_coins():
     return total_money
 
 
-def is_transaction_successful(money_inserted, drink_cost):
+def is_transaction_successful(money_received, drink_cost):
     """Returns true if payment is enough. Returns false if money is insufficient."""
-    if money_inserted >= drink_cost:
+    if money_received >= drink_cost:
+        global profit
+        profit += money_received
         return True
     else:
-        print("Sorry, that is not enough money.")
+        print("Sorry, that's not enough money. Money refunded.")
         return False
 
 
@@ -97,10 +99,6 @@ def coffee_machine():
             coffee_order = MENU[coffee_order]
             if check_resources(coffee_order):
                 money_inserted = process_coins()
-            #     if money_inserted > espresso_cost:
-            #         change = money_inserted - espresso_cost
-            #         resources["money"].append(1.50)
-            #         print(f"Here is {change} dollars in change.")
 
 
 coffee_machine()
