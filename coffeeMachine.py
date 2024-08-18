@@ -79,8 +79,10 @@ def process_coins():
 def is_transaction_successful(money_received, drink_cost):
     """Returns true if payment is enough. Returns false if money is insufficient."""
     if money_received >= drink_cost:
+        change = round(money_received - drink_cost, 2)
+        print(f"Here is ${change} in change.")
         global profit
-        profit += money_received
+        profit += drink_cost
         return True
     else:
         print("Sorry, that's not enough money. Money refunded.")
