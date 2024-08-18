@@ -28,10 +28,21 @@ resources = {
     "water": 300,
     "milk": 200,
     "coffee": 100,
+    "money": 0,
 }
+
+
+def report():
+    water = resources["water"]
+    milk = resources["milk"]
+    coffee = resources["coffee"]
+    money = resources["money"]
+    return f"Water: {water}ml\nMilk: {milk}ml\nCoffee: {coffee}mg\nMoney: ${money}"
 
 machine_is_on: True
 while machine_is_on:
     coffee_order = input("What would you like? (espresso/latte/cappuccino)")
+    if coffee_order == 'report':
+        print()
     if coffee_order == 'off':
         machine_is_on = False
