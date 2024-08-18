@@ -30,3 +30,8 @@ resources = {
     "coffee": 100,
 }
 
+machine_is_on: True
+while machine_is_on:
+    coffee_order = input("What would you like? (espresso/latte/cappuccino)")
+    if coffee_order == 'off':
+        machine_is_on = False
