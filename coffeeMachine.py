@@ -52,10 +52,15 @@ def check_resources(drink):
 
     if water < req_water:
         print("Sorry there is not enough water.")
+        return False
     elif milk < req_milk:
         print("Sorry there is not enough milk.")
+        return False
     elif coffee < req_coffee:
         print("Sorry there is not enough coffee.")
+        return False
+    else:
+        return True
 
 def process_coins():
     print("Please insert coins.\n")
