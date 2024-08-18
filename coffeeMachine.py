@@ -39,13 +39,34 @@ def report():
     money = resources["money"]
     print(f"Water: {water}ml\nMilk: {milk}ml\nCoffee: {coffee}mg\nMoney: ${money}")
 
+
+def check_resources(drink):
+    req_water = MENU[drink]['ingredients']['water']
+    req_milk = MENU[drink]['ingredients']['milk']
+    req_coffee = water = MENU[drink]['ingredients']['coffee']
+
+    water = resources["water"]
+    milk = resources["milk"]
+    coffee = resources["coffee"]
+    money = resources["money"]
+
+    if water < req_water:
+        print("Sorry there is not enough water.")
+    if milk < req_milk:
+        print("Sorry there is not enough milk.")
+    if coffee < req_coffee:
+        print("Sorry there is not enough coffee.")
+
+
 def coffee_machine():
     machine_is_on = True
     while machine_is_on:
         coffee_order = input("What would you like? (espresso/latte/cappuccino)")
-        if coffee_order == 'report':
+        if coffee_order == 'espresso':
+            check_resources(coffee_order)
+        elif coffee_order == 'report':
             report()
-        if coffee_order == 'off':
+        elif coffee_order == 'off':
             machine_is_on = False
 
 coffee_machine()
