@@ -40,7 +40,7 @@ def report():
     return f"Water: {water}ml\nMilk: {milk}ml\nCoffee: {coffee}mg\nMoney: ${money}"
 
 def coffee_machine():
-    machine_is_on: True
+    machine_is_on = True
     while machine_is_on:
         coffee_order = input("What would you like? (espresso/latte/cappuccino)")
         if coffee_order == 'report':
