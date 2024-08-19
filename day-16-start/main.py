@@ -1,5 +1,5 @@
 from turtle import Turtle, Screen
-
+import prettytable
 timmy = Turtle()
 print(timmy)
 timmy.shape("turtle")
