@@ -1,11 +1,14 @@
-from turtle import Turtle, Screen
-import prettytable
-timmy = Turtle()
-print(timmy)
-timmy.shape("turtle")
-timmy.color("chartreuse")
-timmy.forward(100)
+# from turtle import Turtle, Screen
 
-my_screen = Screen()
-print(my_screen.canvheight)
-my_screen.exitonclick()
+# timmy = Turtle()
+# print(timmy)
+# timmy.shape("turtle")
+# timmy.color("chartreuse")
+# timmy.forward(100)
+
+# my_screen = Screen()
+# print(my_screen.canvheight)
+# my_screen.exitonclick()
+
+from prettytable import PrettyTable
+table = PrettyTable
