@@ -23,3 +23,18 @@ class Snake:
             self.segments[seg_num].goto(new_x, new_y)
         self.segments[0].forward(MOVE_DISTANCE)
 
+    def up(self):
+        for seg_num in range(0, len(self.segments)):
+            self.segments[seg_num].setheading(0)
+
+    def down(self):
+        for seg_num in range(0, len(self.segments)):
+            self.segments[seg_num].setheading(180)
+
+    def left(self):
+        for seg_num in range(0, len(self.segments)):
+            self.segments[seg_num].setheading(270)
+
+    def right(self):
+        for seg_num in range(0, len(self.segments)):
+            self.segments[seg_num].setheading(90)
