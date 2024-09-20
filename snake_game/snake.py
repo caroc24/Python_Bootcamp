@@ -2,11 +2,13 @@ from turtle import Turtle
 STARTING_POSITIONS = [(0, 0), (-20,0), (-40,0)]
 MOVE_DISTANCE = 20
 
+
 class Snake:
     """Models the snake that plays the game"""
     def __init__(self):
         self.segments = []
         self.create_snake()
+        self.head = self.segments[0]
 
     def create_snake(self):
         for i in range(0, 3):
@@ -21,16 +23,16 @@ class Snake:
             new_x = self.segments[seg_num - 1].xcor()
             new_y = self.segments[seg_num - 1].ycor()
             self.segments[seg_num].goto(new_x, new_y)
-        self.segments[0].forward(MOVE_DISTANCE)
+        self.head.forward(MOVE_DISTANCE)
 
     def up(self):
-        self.segments[0].setheading(0)
+        self.head.setheading(0)
 
     def down(self):
-        self.segments[0].setheading(180)
+        self.head.setheading(180)
 
     def left(self):
-        self.segments[0].setheading(270)
+        self.head.setheading(270)
 
     def right(self):
-        self.segments[0].setheading(90)
+        self.head.setheading(90)
