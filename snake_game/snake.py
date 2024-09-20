@@ -24,17 +24,13 @@ class Snake:
         self.segments[0].forward(MOVE_DISTANCE)
 
     def up(self):
-        for seg_num in range(0, len(self.segments)):
-            self.segments[seg_num].setheading(0)
+        self.segments[0].setheading(0)
 
     def down(self):
-        for seg_num in range(0, len(self.segments)):
-            self.segments[seg_num].setheading(180)
+        self.segments[0].setheading(180)
 
     def left(self):
-        for seg_num in range(0, len(self.segments)):
-            self.segments[seg_num].setheading(270)
+        self.segments[0].setheading(270)
 
     def right(self):
-        for seg_num in range(0, len(self.segments)):
-            self.segments[seg_num].setheading(90)
+        self.segments[0].setheading(90)
