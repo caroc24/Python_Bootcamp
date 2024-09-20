@@ -12,12 +12,11 @@ snake_body = []
 
 def create_snake():
     for i in range(0, 3):
-        new_segment = Turtle(shape="square")
+        new_segment = Turtle("square")
         new_segment.color("white")
         new_segment.penup()
         new_segment.goto(x=i*-20, y=0)
         snake_body.append(new_segment)
-        screen.update()
 
 
 # def move_forward(snake):
@@ -27,9 +26,7 @@ def create_snake():
 
 
 game_is_on = True
-
 create_snake()
-
 while game_is_on:
     screen.update()
     time.sleep(0.1)
