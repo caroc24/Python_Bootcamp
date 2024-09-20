@@ -1,4 +1,4 @@
-from turtle import Turtle, Screen
+from turtle import Screen
 import time
 
 screen = Screen()
@@ -7,26 +7,9 @@ screen.bgcolor("black")
 screen.title("My Snake Game")
 screen.tracer(0)
 
-snake_body = []
-
-
-def create_snake():
-    for i in range(0, 3):
-        new_segment = Turtle("square")
-        new_segment.color("white")
-        new_segment.penup()
-        new_segment.goto(x=i*-20, y=0)
-        snake_body.append(new_segment)
-
-
-# def move_forward(snake):
-#     for segment in snake_body:
-#         segment.forward(20)
-#         screen.update()
-
 
 game_is_on = True
-create_snake()
+
 while game_is_on:
     screen.update()
     time.sleep(0.1)
